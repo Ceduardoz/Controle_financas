@@ -1,0 +1,26 @@
+.wrapper {
+  height: 20rem;
+  width: 49rem;
+  --chart-color: var(--accent-red-1);
+}
+
+.tooltip {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--hover-on-surface);
+  border-radius: 0.8rem;
+  padding: 0.8rem;
+  box-shadow: 0 10px 28px var(--shadow-soft);
+}
+
+.tooltipLabel {
+  display: block;
+  font-size: 0.8em;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.tooltipValue {
+  display: block;
+  font-size: 0.8em;
+  color: var(--text);
+}

@@ -74,21 +74,12 @@
   --accent-orange-2: #fe8d7a;
   --accent-red-1: #ff2d5a;
   --accent-red-2: #ff6b8b;
+
+  min-height: 100%;
 }
 
 body {
   min-height: 100vh;
   background: var(--bg-app);
   color: var(--text);
-}
-
-#root {
-  min-height: 100vh;
-}
-
-/* layout do app */
-.app-shell {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 280px 1fr;
 }

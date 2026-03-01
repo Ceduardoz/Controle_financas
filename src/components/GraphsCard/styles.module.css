@@ -1,0 +1,6 @@
+.cardGraphs {
+  background-color: var(--bg-surface);
+  height: 25rem;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+}
