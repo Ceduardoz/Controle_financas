@@ -3,7 +3,7 @@
   display: grid;
   place-items: center;
   padding: 24px;
-  background: var(--bg-surface-2); /* seu fundo externo */
+  background: var(--bg-surface-2);
 }
 
 .frame {

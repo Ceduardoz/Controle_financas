@@ -9,10 +9,10 @@
   font-size: clamp(0.8em, 1.4em, 2em);
 }
 
-.buttonTheme {
-  background-color: transparent;
-  color: var(--text);
-  border: none;
+.icones {
   cursor: pointer;
   font-size: clamp(0.8em, 1.4em, 2em);
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }

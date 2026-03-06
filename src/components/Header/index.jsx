@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
-import { SunIcon, Moon } from "lucide-react";
+import { SunIcon, Moon, CirclePlus } from "lucide-react";
 
+import FinanceForm from "../FinanceForm";
+import DefaultButton from "../DefaultButton";
+import DefaultModal from "../DefaultModal";
 import styles from "./styles.module.css";
 
 export default function Header() {
@@ -14,6 +17,9 @@ export default function Header() {
     }
     return "light";
   });
+
+  // Abrir o modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Objeto para definir o icone
   const nextThemeIcon = {
@@ -37,15 +43,26 @@ export default function Header() {
     <header className={styles.header}>
       <h4 className={styles.NameUser}>Bem Vindo (Usuario)</h4>
 
-      {/* Botão mudança de tema. */}
-      <button
-        aria-label="mudar tema"
-        title="mudar tema"
-        className={styles.buttonTheme}
-        onClick={handleThemeChange}
-      >
-        {nextThemeIcon[theme]}
-      </button>
+      <div className={styles.icones}>
+        {/* Modal para criar */}
+        <DefaultButton onClick={() => setIsModalOpen(true)}>
+          <CirclePlus />
+        </DefaultButton>
+
+        {/* Botão mudança de tema. */}
+        <DefaultButton
+          aria-label="mudar tema"
+          title="mudar tema"
+          onClick={handleThemeChange}
+        >
+          {nextThemeIcon[theme]}
+        </DefaultButton>
+      </div>
+
+      <DefaultModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <h2>Adicionar Finanças</h2>
+        <FinanceForm />
+      </DefaultModal>
     </header>
   );
 }

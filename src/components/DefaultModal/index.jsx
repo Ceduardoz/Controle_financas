@@ -1,16 +1,19 @@
-import { Children } from "react";
+import { CircleX } from "lucide-react";
+
 import styles from "./styles.module.css";
 
-export default function DefaultModal({ isOpen, onClose, Children }) {
+export default function DefaultModal({ isOpen, onClose, children }) {
   if (!isOpen) return null;
 
   return (
-    <div className={styles.overlay} onclick={onClose}>
-      <div className={styles.modal} onclick={(e) => e.stopPropagation()}>
-        <button className={styles.closeButton}>Fechar</button>
-      </div>
+    <div className={styles.overlay} onClick={onClose}>
+      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+        <button type="button" className={styles.closeButton} onClick={onClose}>
+          <CircleX />
+        </button>
 
-      {Children}
+        {children}
+      </div>
     </div>
   );
 }
