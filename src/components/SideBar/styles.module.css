@@ -20,7 +20,7 @@
   gap: 8px;
 }
 
-.menu a {
+a {
   color: var(--text-inverse);
   padding: 10px 14px;
   border: none;
@@ -33,7 +33,7 @@
   transition: 0.2s;
 }
 
-.menu a:hover {
+a.active {
   background: var(--bg-surface);
   color: var(--text);
 }

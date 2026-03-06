@@ -1,14 +1,27 @@
-.content {
+.filter {
   display: flex;
-  justify-self: start;
-  gap: 2rem;
-  width: 100%;
-  height: 25%;
-  padding: 2rem 0;
+  justify-content: space-around;
+  gap: 4rem;
 }
 
-.currentGroup {
+.inputsFilter {
+  width: 100%;
+  height: 3rem;
+  border: none;
+  border-radius: 0.8rem;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+}
+
+.inputsFilter:focus {
+  border-color: var(--brand);
+}
+
+.OpenModalBtn {
+  background-color: var(--brand);
+  color: var(--text-inverse);
+  justify-content: center;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }

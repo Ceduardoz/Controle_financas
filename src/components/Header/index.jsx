@@ -1,12 +1,21 @@
 import { useState, useEffect } from "react";
-import { SunIcon, Moon, CirclePlus } from "lucide-react";
+import { SunIcon, Moon } from "lucide-react";
 
-import FinanceForm from "../FinanceForm";
 import DefaultButton from "../DefaultButton";
-import DefaultModal from "../DefaultModal";
 import styles from "./styles.module.css";
+import { useLocation } from "react-router-dom";
 
 export default function Header() {
+  // Definindo o texto de acordo com a página renderizada
+  const localtion = useLocation();
+
+  const titles = {
+    "/": "Bem Vindo, usuário",
+    "/transacoes": "Transações",
+  };
+
+  const pageTitle = titles[localtion.pathname] || "dashboard";
+
   // Pegar o tema pelo localStorage
   // Evita leitura desnecessária do localStorage a cada render.
   // Garante fallback seguro para "light".
@@ -17,9 +26,6 @@ export default function Header() {
     }
     return "light";
   });
-
-  // Abrir o modal
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Objeto para definir o icone
   const nextThemeIcon = {
@@ -41,14 +47,9 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      <h4 className={styles.NameUser}>Bem Vindo (Usuario)</h4>
+      <h4 className={styles.NameUser}>{pageTitle}</h4>
 
       <div className={styles.icones}>
-        {/* Modal para criar */}
-        <DefaultButton onClick={() => setIsModalOpen(true)}>
-          <CirclePlus />
-        </DefaultButton>
-
         {/* Botão mudança de tema. */}
         <DefaultButton
           aria-label="mudar tema"
@@ -58,11 +59,6 @@ export default function Header() {
           {nextThemeIcon[theme]}
         </DefaultButton>
       </div>
-
-      <DefaultModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <h2>Adicionar Finanças</h2>
-        <FinanceForm />
-      </DefaultModal>
     </header>
   );
 }

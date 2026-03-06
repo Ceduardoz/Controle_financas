@@ -7,7 +7,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Dashboard />} />
-      <Route path="/transations" element={<Transations />} />
+      <Route path="/transacoes" element={<Transations />} />
     </Routes>
   );
 }

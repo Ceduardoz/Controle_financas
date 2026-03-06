@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import styles from "./styles.module.css";
 
@@ -11,10 +11,19 @@ export default function SideBar() {
       </div>
 
       {/* Menu principal. */}
-      <nav className={styles.menu}>
-        <Link to="/">Dashboard</Link>
-        <Link to="/transations">Transações</Link>
-      </nav>
+      <NavLink
+        to="/"
+        className={({ isActive }) => (isActive ? `${styles.active}` : "")}
+      >
+        Dashboard
+      </NavLink>
+
+      <NavLink
+        to="/transacoes"
+        className={({ isActive }) => (isActive ? `${styles.active}` : "")}
+      >
+        Transações
+      </NavLink>
     </aside>
   );
 }
