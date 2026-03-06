@@ -84,6 +84,8 @@
   --bg-surface: #313131; /* cards / painéis */
   --bg-surface-2: #858585; /* superfície sutil (inputs, áreas internas) */
 
+  --active-on-surface: rgba(149, 158, 180, 0.1);
+
   /* ========== text ========== */
   --text: #f3f3f3;
 }

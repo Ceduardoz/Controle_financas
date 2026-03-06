@@ -1,0 +1,105 @@
+.containerTable {
+  background-color: var(--bg-surface);
+  border-radius: 0.8rem;
+  margin: 0.5rem 0rem;
+  padding: 0.5rem;
+}
+
+.title {
+  text-align: left;
+  margin: 1rem;
+}
+
+.table {
+  overflow-y: scroll;
+  background-color: var(--bg-surface);
+  width: 100%;
+  border-radius: 0.8rem;
+}
+
+thbody,
+thead,
+th,
+tr,
+td {
+  padding: 0.5rem;
+  text-align: center;
+  border: none;
+}
+
+thead {
+  background-color: var(--brand-600);
+}
+
+tr {
+  border-radius: 0.8rem;
+}
+
+th {
+  color: var(--text-inverse);
+}
+
+td {
+  border-bottom: 2px solid var(--active-on-surface);
+}
+.iconesTable {
+  margin: 0rem 0.4rem;
+  color: var(--text);
+  background-color: transparent;
+  border: none;
+}
+
+.editIcon {
+  color: var(--info);
+}
+
+.deleteIcon {
+  color: var(--error);
+}
+
+.pagination {
+  display: flex;
+  justify-content: end;
+  gap: 12px;
+  margin-top: 16px;
+  align-items: center;
+}
+
+.pagination button {
+  background-color: transparent;
+  color: var(--text);
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  color: var(--brand-400);
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.expense {
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.4rem;
+  background-color: var(--error-border);
+  color: var(--error);
+}
+.income {
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.4rem;
+  background-color: var(--success-border);
+  color: var(--success);
+}
+
+.incomeValue {
+  color: var(--success);
+}
+
+.expenseValue {
+  color: var(--error);
+}

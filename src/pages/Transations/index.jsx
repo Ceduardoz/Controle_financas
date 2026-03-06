@@ -2,9 +2,9 @@ import { useState } from "react";
 import { CirclePlus } from "lucide-react";
 
 import MainTemplate from "../../templates/MainTemplate";
-import DefaultButton from "../../components/DefaultButton";
 import DefaultModal from "../../components/DefaultModal";
 import FinanceForm from "../../components/FinanceForm";
+import TransactionsTable from "../../components/TransactionsTable";
 
 import styles from "./styles.module.css";
 
@@ -47,6 +47,8 @@ export default function Transations() {
           <FinanceForm />
         </DefaultModal>
       </div>
+
+      <TransactionsTable />
     </MainTemplate>
   );
 }

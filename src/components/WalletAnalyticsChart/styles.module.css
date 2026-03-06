@@ -1,7 +1,8 @@
 .wrapper {
   width: 100%;
-  height: clamp(260px, 35vh, 460px);
+  height: clamp(260px, 40vh, 460px);
   --chart-color: var(--accent-red-1);
+  margin: auto;
 }
 
 .tooltip {

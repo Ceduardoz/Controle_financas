@@ -1,3 +1,5 @@
+import { transactionsMock } from "../../mockData/mockData";
+
 import styles from "./styles.module.css";
 import {
   ResponsiveContainer, // Tamanho do Gráfico
@@ -8,18 +10,6 @@ import {
   Tooltip, // Tooltip
   CartesianGrid, // Grade de fundo
 } from "recharts";
-
-// dados Mock
-const data = [
-  { time: "10:00", value: 1200 },
-  { time: "10:30", value: 4200 },
-  { time: "11:00", value: 2800 },
-  { time: "11:30", value: 6500 },
-  { time: "12:00", value: 5200 },
-  { time: "12:30", value: 9000 },
-  { time: "13:00", value: 7800 },
-  { time: "13:30", value: 11000 },
-];
 
 // formatar valores no padrão brasileiro
 function formatMoney(v) {
@@ -45,11 +35,18 @@ function CustomTooltip({ active, payload, label }) {
 }
 
 export default function WalletAnalyticsChart() {
+  const chartData = transactionsMock.map((t) => ({
+    time: new Date(t.date).toLocaleDateString("pt-BR", {
+      day: "2-digit",
+      month: "2-digit",
+    }),
+    value: t.amount,
+  }));
   return (
     <div className={styles.wrapper}>
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart
-          data={data}
+          data={chartData}
           margin={{ top: 8, right: 10, left: 0, bottom: 0 }}
         >
           <defs>
